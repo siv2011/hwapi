@@ -114,9 +114,8 @@
                     $("#Searchbutton").on("click", function(evt){
                     var hello = $("#Searchterm").val();
                     $.getJSON('http://search.twitter.com/search.json?q='+hello+'&rpp=100?callback=?', function(data) {
-                      console.log(data);
                       var users = data.results.map(function(elem) {
-                        return elem.from_user;
+                        return elem.from_user_name;
                       });
                       
                       var uniques = unique(users);
